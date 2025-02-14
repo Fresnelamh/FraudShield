@@ -1,5 +1,5 @@
 # FraudShield
-Description
+
 FraudShield est un système de détection de fraude bancaire en C++ conçu pour analyser les transactions en temps réel et identifier les activités suspectes. Il utilise le Machine Learning pour détecter les anomalies et minimiser les faux positifs.
 
 Fonctionnalités principales
