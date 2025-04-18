@@ -1,0 +1,14 @@
+# ========================
+# ===== AJOUTER ==========
+# ========================
+elif page == "Ajouter":
+    st.subheader("➕ Ajouter une transaction")
+    montant = st.number_input("Montant (€)", min_value=0.0, step=0.1)
+    pays = st.selectbox("Pays", ["FR", "US", "NG", "DE", "IN", "JP"])
+    utilisateur_id = st.number_input("ID utilisateur", min_value=1)
+    fraude = st.checkbox("Fraude détectée ?", value=False)
+    date = st.date_input("Date de la transaction", value=datetime.today())
+
+    if st.button("Enregistrer la transaction"):
+        insert_transaction(montant, pays, utilisateur_id, fraude, datetime.combine(date, datetime.min.time()))
+        st.success("✅ Transaction enregistrée !")
