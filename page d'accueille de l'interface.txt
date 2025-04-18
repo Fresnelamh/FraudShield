@@ -1,0 +1,22 @@
+# ========================
+# ======= ACCUEIL ========
+# ========================
+if page == "Accueil":
+    st.markdown("""
+    <div class='full-page'>
+        <h1 style='color: #9F70FD;'>🚀 Bienvenue sur FraudShield by Ambiton</h1>
+        <h4 style='margin-top:-10px;'>Surveillez vos transactions. Protégez vos finances.</h4>
+    </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("📊 Dashboard", key="dashboard_home"):
+            st.session_state.page = "Dashboard"
+        if st.button("📄 Transactions", key="transactions_home"):
+            st.session_state.page = "Transactions"
+    with col2:
+        if st.button("📂 Transactions suspectes", key="suspect_home"):
+            st.session_state.page = "Transactions suspectes"
+        if st.button("🚨 Alertes", key="alertes_home"):
+            st.session_state.page = "Alertes"
