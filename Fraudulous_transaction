@@ -1,0 +1,58 @@
+
+from joblib import load
+import numpy as np
+import pandas as pd
+
+fraud_transaction = {
+    'Time': 75845.0,
+    'V1': -3.043540,
+    'V2': 2.321933,
+    'V3': -4.378950,
+    'V4': 4.902977,
+    'V5': -3.404401,
+    'V6': 0.331082,
+    'V7': -1.933399,
+    'V8': 2.824414,
+    'V9': -2.447452,
+    'V10': -1.566204,
+    'V11': -2.123682,
+    'V12': 2.372157,
+    'V13': -1.164378,
+    'V14': -4.079333,
+    'V15': -0.428118,
+    'V16': 1.717351,
+    'V17': -2.292645,
+    'V18': 2.242032,
+    'V19': -0.996055,
+    'V20': -0.077849,
+    'V21': 0.635558,
+    'V22': 0.463917,
+    'V23': -0.114805,
+    'V24': -0.183361,
+    'V25': 0.324514,
+    'V26': -0.021053,
+    'V27': 0.021492,
+    'V28': 0.021293,
+    'Amount': 212.0
+}
+
+fraud_df = pd.DataFrame([fraud_transaction])
+
+
+
+
+
+
+# Charger le scaler et modèle
+scaler = load("models/scaler.pkl")
+model = load("models/xgb_model.pkl")
+
+# Normaliser
+fraud_scaled = scaler.transform(fraud_df)
+
+# Prédiction
+proba = model.predict_proba(fraud_scaled)[0][1]
+predicted_class = int(proba > 0.7)
+
+print(f"Probabilité de fraude : {proba:.4f}")
+print("FRAUDE DÉTECTÉE" if predicted_class else "Transaction légitime")
