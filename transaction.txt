@@ -1,0 +1,15 @@
+# ============================
+# ===== TRANSACTIONS =========
+# ============================
+elif page == "Transactions":
+    st.subheader("📄 Liste des transactions")
+    filtre = st.selectbox("Filtrer par", ["Toutes", "Frauduleuses", "Non frauduleuses"])
+
+    if filtre == "Frauduleuses":
+        data = df[df["fraude"] == 1]
+    elif filtre == "Non frauduleuses":
+        data = df[df["fraude"] == 0]
+    else:
+        data = df
+
+    st.dataframe(data)
