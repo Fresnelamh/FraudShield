@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/2d8eeac5-ff6b-4d2b-9822-3dad6487da89)
 # FraudShield
 
 FraudShield est un système de détection de fraude bancaire en Python
