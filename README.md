@@ -11,18 +11,5 @@ Fonctionnalités principales
     API REST pour interagir avec le moteur de détection.
     Interface utilisateur pour visualiser les fraudes détectées.
     Stockage des transactions suspectes dans une base de données.
-
-
-
-
-
-
-
-
-
-
-Objectifs
-
-    Fournir un système performant capable de traiter 10 000 transactions par jour.
-    Assurer une détection en moins de 2 secondes par transaction.
-    Offrir une interface claire pour le suivi des fraudes en temps réel.
+    Envoi de mail de confirmation ou de refutation d'une transaction suspecte.
+    Visualisation via un tableau de bord des courbes associées aux transactions enrégistrées prériodiquement.
